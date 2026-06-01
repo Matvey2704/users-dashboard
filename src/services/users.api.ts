@@ -1,5 +1,11 @@
 import { api } from "./api";
-import { User, UsersResponse } from "../types/user.types";
+import {
+  User,
+  UsersResponse,
+  UserPostsResponse,
+  UserTodosResponse,
+  UserCartsResponse,
+} from "../types/user.types";
 
 
 
@@ -74,13 +80,14 @@ export const fetchUserById = (id: number) =>
   api<User>(`/users/${id}`);
 
 export const fetchUserPosts = (id: number) =>
-  api<any>(`/users/${id}/posts`);
+  api<UserPostsResponse>(`/users/${id}/posts`);
 
 export const fetchUserTodos = (id: number) =>
-  api<any>(`/users/${id}/todos`);
+  api<UserTodosResponse>(`/users/${id}/todos`);
 
 export const fetchUserCarts = (id: number) =>
-  api<any>(`/users/${id}/carts`);
+  api<UserCartsResponse>(`/users/${id}/carts`);
 
 export const fetchAllUsers = () =>
   api<UsersResponse>("/users?limit=250");
+

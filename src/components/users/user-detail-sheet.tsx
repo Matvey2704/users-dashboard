@@ -414,39 +414,39 @@ export function UserDetailSheet({
 
                       <CardContent className="space-y-3">
                         {postsQuery.isLoading ? (
-                          <Skeleton className="h-24 w-full rounded-lg" />
-                        ) : postsQuery.data?.posts.length ? (
-                          postsQuery.data.posts.map((p: any) => (
-                            <div
-                              key={p.id}
-                              className="rounded-2xl border border-border/60 bg-background/80 p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border hover:shadow-md"
-                            >
-                              <p className="font-medium leading-snug">
-                                {p.title}
-                              </p>
+  <Skeleton className="h-24 w-full rounded-lg" />
+) : postsQuery.data?.posts.length ? (
+  postsQuery.data.posts.map((p) => (
+    <div
+      key={p.id}
+      className="rounded-2xl border border-border/60 bg-background/80 p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border hover:shadow-md"
+    >
+      <p className="font-medium leading-snug">
+        {p.title}
+      </p>
 
-                              <p className="text-muted-foreground mt-2 line-clamp-3 text-xs leading-relaxed">
-                                {p.body}
-                              </p>
+      <p className="text-muted-foreground mt-2 line-clamp-3 text-xs leading-relaxed">
+        {p.body}
+      </p>
 
-                              <div className="mt-3 flex flex-wrap gap-2">
-                                {p.tags.map((t: any) => (
-                                  <Badge
-                                    key={t}
-                                    variant="outline"
-                                    className="rounded-full text-[10px] font-normal"
-                                  >
-                                    #{t}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </div>
-                          ))
-                        ) : (
-                          <p className="text-muted-foreground text-sm">
-                            No posts for this profile.
-                          </p>
-                        )}
+      <div className="mt-3 flex flex-wrap gap-2">
+        {p.tags.map((t) => (
+          <Badge
+            key={t}
+            variant="outline"
+            className="rounded-full text-[10px] font-normal"
+          >
+            #{t}
+          </Badge>
+        ))}
+      </div>
+    </div>
+  ))
+) : (
+  <p className="text-muted-foreground text-sm">
+    No posts for this profile.
+  </p>
+)}
                       </CardContent>
                     </Card>
                   </TabsContent>

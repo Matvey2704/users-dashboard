@@ -80,3 +80,60 @@ export interface UsersResponse {
   skip: number
   limit: number
 }
+
+export type UserPost = {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+  tags: string[];
+};
+
+export type UserTodo = {
+  id: number;
+  todo: string;
+  completed: boolean;
+  userId: number;
+};
+
+export type UserCartProduct = {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedTotal: number;
+  thumbnail: string;
+};
+
+export type UserCart = {
+  id: number;
+  products: UserCartProduct[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
+};
+
+export type UserPostsResponse = {
+  posts: UserPost[];
+  total: number;
+  skip: number;
+  limit: number;
+};
+
+export type UserTodosResponse = {
+  todos: UserTodo[];
+  total: number;
+  skip: number;
+  limit: number;
+};
+
+export type UserCartsResponse = {
+  carts: UserCart[];
+  total: number;
+  skip: number;
+  limit: number;
+};
